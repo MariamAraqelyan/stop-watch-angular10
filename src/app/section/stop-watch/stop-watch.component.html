@@ -1,0 +1,31 @@
+<div class="timer-container">
+  <section class="timer-container__label">
+
+    <div *ngIf="counter" [ngClass]="{blink: !running}">
+      <app-time-display [timeForDisplay]="timeForDisplay"></app-time-display>
+    </div>
+
+    <div *ngIf="!counter">
+      <app-time-display [timeForDisplay]="timeForDisplay"></app-time-display>
+    </div>
+
+  </section>
+
+
+  <div class="timer-container__btns">
+    <button class="timer-container__btn" (click)="startTimer()">
+      {{ startText }}
+    </button>
+
+    <button [disabled]='!counter'
+            [ngClass]="{'disabled': !counter}"
+            class="timer-container__btn" (click)="lapTimeSplit()">Lap
+    </button>
+
+    <button class="timer-container__btn" (click)="clearTimer()">Clear</button>
+
+    <div>
+      <app-time-points-list [listItems]="laps" *ngIf="laps.length"></app-time-points-list>
+    </div>
+  </div>
+</div>

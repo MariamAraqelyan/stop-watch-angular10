@@ -1,0 +1,12 @@
+.header {
+  height: 50px;
+  width: 100%;
+  background-color: #cccccc40;
+
+  &__info {
+    text-align: center;
+    line-height: 50px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+}
